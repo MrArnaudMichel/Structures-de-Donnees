@@ -56,7 +56,7 @@ Une fois ces fonctions écrites, on pourra écrire par exemple :
 vector_int v; // déclaration
 vec_int_init(&v); // initialisation
 for (size_t i = 0; i < 20; i++)
-    vec_int_push_back(rand_int_between(0, 100));
+    vec_int_push_back(&v, rand_int_between(0, 100));
 printf("vector_int content :\n");
 for (size_t i = 0; i < vec_int_size(&v); i++)
     printf("%d - ", vec_int_get_value(&v, i));
