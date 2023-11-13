@@ -14,7 +14,7 @@ Si on ne se sert que de quelques valeurs entières entre 0 et `m` en tant que cl
 
 Le **hachage** consiste à transformer une clé donnée en un entier compris entre 0 et `p`, `p` étant plus petit que la taille de l'espace des clés. On se contente alors d'un `vector` de taille `p` pour stocker les valeurs. Si `t` est la fonction de transformation de clé, alors la valeur associée à une clé `k` est stockée dans la case d'indice `t(k)`. Gain intéressant, la nature des clés n'a pas d'importance : elles peuvent être des entiers, des chaînes de caractères, des structures, ... du moment que l'on peut écrire une fonction `t` qui les transforme en un entier compris entre 0 et `p`.
 
-Dans le cas où l'on connaît à l'avance le nombre d'éléments que l'on va stocker et leurs clés, on peut choisir `p` comme étant égal à ce nombre, et il est possible de construire une fonction _parfaite_ et _minimale_ qui transforme chacune de ces clés en un entier différent dans l'intervalle `[0, p]`.
+Dans le cas où l'on connaît à l'avance le nombre d'éléments que l'on va stocker ainsi que leurs clés, on peut choisir `p` comme étant égal à ce nombre, et il est possible de construire une fonction _parfaite_ et _minimale_ qui transforme chacune de ces `p` clés en un entier unique dans l'intervalle `[0, p]`.
 
 Évidemment, on ne connait pas toujours à l'avance le nombre d'éléments que l'on va stocker et leurs clés. Dans ce cas, on peut choisir `p` au mieux comme une estimation de ce nombre. Quand le nombre d'éléments à stocker est supérieur au `p` choisi, même la meilleure fonction ne peut plus éviter les conflits : deux clés différentes seront transformées en le même entier. On parle de **collision** et il faut prévoir un mécanisme pour les gérer.
 
