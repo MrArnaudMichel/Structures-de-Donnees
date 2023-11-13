@@ -91,7 +91,7 @@ gettimeofday(&tval_before, NULL);
 bubble_sort_vec_int(&v);
 
 gettimeofday(&tval_after, NULL);
-timersub(&tval_after, &tval_before, &tval_result);
+timeval_sub(&tval_after, &tval_before, &tval_result);
 printf("\tElapsed time: %ld.%06ld\n",
   (long int)tval_result.tv_sec, (long int)tval_result.tv_usec);
 
