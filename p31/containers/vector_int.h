@@ -4,7 +4,9 @@
 
 typedef struct vector_int
 {
-
+    int *data;
+    size_t size;
+    size_t capacity;
 } vector_int;
 
 void vec_int_init(vector_int *v);
